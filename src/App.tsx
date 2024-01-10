@@ -1,14 +1,14 @@
 import BooksLists from "./components/BooksList";
 import ReadingList from "./components/ReadingList";
+import useBooksContext from "./hooks/useBooksContext";
 
-export default function App () {
-
+export default function App() {
+  const { readingList } = useBooksContext()!;
   return (
-    <main className="flex sm:flex-col md:flex-row">
+    <main className="flex flex-col sm:flex-row gap-6 items-start p-5">
+      <BooksLists />
 
-        <BooksLists />
-
-        <ReadingList />
+      {readingList.length !== 0 && <ReadingList />}
     </main>
-  )
+  );
 }

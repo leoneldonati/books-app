@@ -9,11 +9,17 @@ export default function BooksLists() {
 
   return (
     <section>
-      <h1>{availibleBooks} libros disponibles.</h1>
+      <h1
+        className="text-4xl"
+      >{availibleBooks} libros disponibles.</h1>
 
-      <h2>{readingList.length} en lista de lectura.</h2>
+      <h2
+        className="text-2xl mb-5"
+      >{readingList.length} en lista de lectura.</h2>
 
-      <div>
+      <div
+        className="grid grid-cols-3 gap-3"
+      >
         {booksJson.library.map((info, index) => (
           <BookCard book={info.book} key={index} />
         ))}
